@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title></title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #main {
+            position: fixed;
+            inset: 0;
+        }
+
+        #video1 {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <video id="video1" muted autoplay loop playsinline webkit-playsinline preload="auto" src="newyear.mp4"></video>
+    </div>
+</body>
+</html>
