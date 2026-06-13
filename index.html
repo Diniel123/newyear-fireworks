@@ -28,7 +28,37 @@
 </head>
 <body>
     <div id="main">
-        <video id="video1" muted autoplay loop playsinline webkit-playsinline preload="auto" src="newyear.mp4"></video>
+        <video
+            id="video1"
+            muted
+            autoplay
+            loop
+            playsinline
+            webkit-playsinline
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            preload="auto"
+            src="newyear.mp4"
+        ></video>
     </div>
+    <script>
+        const video = document.getElementById("video1");
+
+        function playVideo() {
+            video.muted = true;
+            video.play().catch(() => {});
+        }
+
+        window.addEventListener("load", playVideo);
+        window.addEventListener("pageshow", playVideo);
+        video.addEventListener("canplay", playVideo);
+        document.addEventListener("visibilitychange", () => {
+            if (!document.hidden) {
+                playVideo();
+            }
+        });
+        document.addEventListener("touchstart", playVideo, { passive: true });
+        document.addEventListener("click", playVideo);
+    </script>
 </body>
 </html>
